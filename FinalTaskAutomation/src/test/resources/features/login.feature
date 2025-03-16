@@ -26,9 +26,9 @@ Feature: Login Feature
 
     Scenario: Login with credentials
         When I type Accepted username "<username>" into Username field
-        And I enter password as "<password>"
+        And I enter password "<password>"
         And I hit the Login button
-        Then The title should be “Swag Labs” in the dashboard
+        Then The title should be "Swag Labs" in the dashboard
 
         Examples:
             | username      | password     |

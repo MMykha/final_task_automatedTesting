@@ -15,7 +15,7 @@ public class WebDriverInstance {
 
     public static WebDriver getDriver(String browser){
         if( driverThreadLocal.get() == null ){
-            log.info("WebDriver initialization for thread {}", Thread.currentThread().getId());
+            log.error("WebDriver initialization for thread {}", Thread.currentThread().getId());
              driverThreadLocal.set(WebDriverFactoryConfig.getFactory(browser).createDriver());
         }
         return driverThreadLocal.get();
@@ -23,7 +23,7 @@ public class WebDriverInstance {
 
     public static void closeDriver(){
         if( driverThreadLocal.get() != null){
-            log.info("Closing driver of thread {}", Thread.currentThread().getId());
+            log.error("Closing driver of thread {}", Thread.currentThread().getId());
             driverThreadLocal.get().quit();
             driverThreadLocal.remove();
         }
