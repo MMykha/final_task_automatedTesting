@@ -61,5 +61,4 @@ public class Hooks {
         WebDriverInstance.closeDriver();
     }
 
-
 }

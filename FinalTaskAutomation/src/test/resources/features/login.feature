@@ -3,6 +3,7 @@ Feature: Login Feature
     Background:
         Given I open the login page
 
+    @parallel
     Scenario: Login with empty credentials
         When I type credentials into Username "<username>" and Password "<password>" fields
         And I clear the inputs
@@ -13,6 +14,7 @@ Feature: Login Feature
             | username | password     |
             | any_user | any_password |
 
+    @parallel
     Scenario: Login with Username credentials
         When I type any credentials in username "<username>"
         And I enter password "<password>"
@@ -24,6 +26,7 @@ Feature: Login Feature
             | username | password     |
             | any_user | any_password |
 
+    @parallel
     Scenario: Login with credentials
         When I type Accepted username "<username>" into Username field
         And I enter password "<password>"
