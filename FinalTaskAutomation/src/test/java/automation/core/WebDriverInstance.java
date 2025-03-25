@@ -1,9 +1,6 @@
 package automation.core;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +13,7 @@ public class WebDriverInstance {
     public static WebDriver getDriver(String browser){
         if( driverThreadLocal.get() == null ){
             log.info("WebDriver initialization for thread {}", Thread.currentThread().getId());
-             driverThreadLocal.set(WebDriverFactoryConfig.getFactory(browser).createDriver());
+             driverThreadLocal.set(WebDriverFactoryConfig.getFactoryDriver(BrowserConfigurationType.valueOf(browser)));
         }
         return driverThreadLocal.get();
     }

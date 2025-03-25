@@ -13,8 +13,8 @@ import org.slf4j.LoggerFactory;
 public class LoginWithEmptyCredentialsSteps {
     private static final Logger log = LoggerFactory.getLogger(LoginWithEmptyCredentialsSteps.class);
     private User user;
-    private WebDriver driver = Hooks.getDriver();;
-    private LoginPage loginPage = new LoginPage(driver);;
+    private final WebDriver driver = Hooks.getDriver();
+    private final LoginPage loginPage = new LoginPage(driver);
 
     @Given("I open the login page")
     public void iOpenTheLoginPage() {
