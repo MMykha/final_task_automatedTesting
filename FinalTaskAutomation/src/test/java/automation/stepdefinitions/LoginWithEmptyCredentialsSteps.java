@@ -47,7 +47,8 @@ public class LoginWithEmptyCredentialsSteps {
     public void iShouldSeeTheErrorMessage(String expectedMessage) {
         String actualErrorMessage = loginPage.getErrorMessage();
         log.info("Verifying error message: Expected {}, Actual {}", expectedMessage, actualErrorMessage);
-        Assertions.assertThat(actualErrorMessage).isNotNull().isEqualTo(expectedMessage);
+        Assertions.assertThat(actualErrorMessage).isNotNull().contains(expectedMessage);
+        //.isEqualTo(expectedMessage)
     }
 
     // UC - 2

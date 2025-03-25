@@ -13,7 +13,7 @@ public class WebDriverInstance {
     public static WebDriver getDriver(String browser){
         if( driverThreadLocal.get() == null ){
             log.info("WebDriver initialization for thread {}", Thread.currentThread().getId());
-             driverThreadLocal.set(WebDriverFactoryConfig.getFactoryDriver(BrowserConfigurationType.valueOf(browser)));
+            driverThreadLocal.set(WebDriverFactoryConfig.getFactoryDriver(BrowserConfigurationType.valueOf(browser)));
         }
         return driverThreadLocal.get();
     }
