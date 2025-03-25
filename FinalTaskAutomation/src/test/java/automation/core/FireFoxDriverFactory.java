@@ -22,10 +22,10 @@ public class FireFoxDriverFactory implements WebDriverAbstractFactory {
 
     @Override
     public WebDriver createHeadlessDriver(){
-        options.addArguments("--headless");
+        log.info("Creating Headless FireFox Driver");
+                options.addArguments("--headless");
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver(options);
-        setSizeWindow(driver, log,"Headless FireFox Driver");
         return driver;
     }
 

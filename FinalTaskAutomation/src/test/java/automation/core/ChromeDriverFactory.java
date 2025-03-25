@@ -22,11 +22,11 @@ public class ChromeDriverFactory implements WebDriverAbstractFactory {
 
     @Override
     public WebDriver createHeadlessDriver(){
+        log.info("Creating Headless Chrome Driver");
         options.addArguments("--headless");
         options.addArguments("--disable-gpu");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
-        setSizeWindow(driver, log,"Headless Chrome Driver");
         return driver;
     }
 

@@ -22,11 +22,11 @@ public class EdgeDriverFactory implements WebDriverAbstractFactory{
 
     @Override
     public WebDriver createHeadlessDriver(){
+        log.info("Creating Headless Edge Driver");
         options.addArguments("-headless");
         options.addArguments("-disable-gpu");
         WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver(options);
-        setSizeWindow(driver, log,"Headless Edge Driver");
         return driver;
     }
 
